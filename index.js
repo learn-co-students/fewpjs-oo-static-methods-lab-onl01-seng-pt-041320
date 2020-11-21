@@ -29,20 +29,13 @@ class Formatter
 
     for (let i = 0; i < wordArray.length; i++)
     {
-      if (i === 0)
+      if (i === 0 || !noCapWords.includes(wordArray[i]))
       {
         newString.push(this.capitalize(wordArray[i]));
       }
       else
       {
-        if (noCapWords.includes(wordArray[i]))
-        {
-          newString.push(wordArray[i]);
-        }
-        else
-        {
-          newString.push(this.capitalize(wordArray[i]));
-        }
+        newString.push(wordArray[i]);
       }
     }
 
